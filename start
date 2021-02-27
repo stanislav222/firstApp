@@ -1,0 +1,8 @@
+#!/bin/sh
+mvn -U clean package
+#docker volume create mysql-data
+docker-compose up -d
+
+#docker run -p 3306:3306 --env MYSQL_ROOT_PASSWORD=root --name mysql test-mysql
+# shellcheck disable=SC2046
+#docker run -p 8080:8080 -v $(pwd)/target:/usr/local/tomcat/webapps --name Tomcat --link mysql tomcat:latest
